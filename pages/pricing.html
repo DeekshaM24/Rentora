@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Demo pricing for Rentora premium services and listing upgrades.">
+    <title>Pricing | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top, rgba(213, 195, 159, 0.08), transparent 28%),
+          var(--canvas);
+      }
+      .page-hero {
+        padding: 90px 0 42px;
+      }
+      .page-hero .section-heading {
+        margin-bottom: 20px;
+      }
+      .pricing-note {
+        margin: 0 0 18px;
+        color: rgba(244, 240, 233, 0.72);
+        font-size: 13px;
+      }
+      .billing-divider {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        max-width: 720px;
+        margin: 26px 0 14px;
+      }
+      .billing-chip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: rgba(29, 29, 32, 0.9);
+      }
+      .billing-chip strong {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .billing-chip small {
+        color: var(--ink-muted);
+        font-size: 11px;
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 26px;
+      }
+      .pricing-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        padding: 26px 22px 20px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(25, 25, 27, 0.92);
+        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.14);
+      }
+      .pricing-card.featured {
+        border-color: rgba(213, 195, 159, 0.6);
+        background: linear-gradient(180deg, rgba(213, 195, 159, 0.08), rgba(29, 29, 32, 0.94));
+      }
+      .card-label {
+        margin: 0 0 14px;
+        color: var(--champagne);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        margin-bottom: 10px;
+      }
+      .price-row .currency {
+        color: var(--ink-muted);
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .price-row .amount {
+        font-family: var(--font-ui);
+        font-size: clamp(36px, 4vw, 54px);
+        font-weight: 800;
+        letter-spacing: -0.06em;
+      }
+      .card-caption {
+        margin: 0 0 20px;
+        color: var(--ink-muted);
+        font-size: 12px;
+      }
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        margin: 0 0 22px;
+        list-style: none;
+      }
+      .feature-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: rgba(244, 240, 233, 0.82);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      .feature-list li::before {
+        content: "✓";
+        color: var(--mint);
+        font-weight: 700;
+      }
+      .meta-row {
+        display: grid;
+        gap: 6px;
+        padding-top: 16px;
+        margin-top: auto;
+        border-top: 1px solid var(--line);
+      }
+      .meta-row span {
+        color: var(--ink-subtle);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .meta-row strong {
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .pricing-card .button {
+        width: 100%;
+        margin-top: 18px;
+      }
+      .terms-note {
+        margin: 14px 0 0;
+        color: var(--ink-muted);
+        font-size: 11px;
+        line-height: 1.7;
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 60px;
+      }
+      .info-panel {
+        padding: 26px 22px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(29, 29, 32, 0.82);
+      }
+      .info-panel h3 {
+        margin: 0 0 14px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .info-panel ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--ink-muted);
+        line-height: 1.8;
+      }
+      @media (max-width: 900px) {
+        .pricing-grid,
+        .info-grid,
+        .billing-divider {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html" aria-label="Rentora home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">rentora<span>.</span></span>
+        </a>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="payment-history.html">Payments</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="button button-quiet login-button" href="login.html">Log in</a>
+          <a class="button button-small button-outline" href="owner-dashboard.html">List your property <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow"><span class="eyebrow-line"></span> Premium services</p>
+            <h2>Pricing for a smoother <em>rental journey.</em></h2>
+          </div>
+          <p class="pricing-note">These are demo/illustrative prices for the prototype. Rentora service fees are separate from tenant rent and security deposit.</p>
+
+          <div class="billing-divider" aria-label="Billing clarification">
+            <div class="billing-chip">
+              <strong>Rentora service fees</strong>
+              <small>Platform, promotion, subscription</small>
+            </div>
+            <div class="billing-chip">
+              <strong>Tenant rent / security deposit</strong>
+              <small>Separate from Rentora fees</small>
+            </div>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <p class="card-label">Starter</p>
+              <div class="price-row"><span class="currency">₹</span><span class="amount">0</span></div>
+              <p class="card-caption">Free listing for essential visibility</p>
+              <ul class="feature-list">
+                <li>Basic property profile</li>
+                <li>Standard listing placement</li>
+                <li>Owner contact details</li>
+                <li>Email support</li>
+              </ul>
+              <div class="meta-row">
+                <span>Duration</span>
+                <strong>Live until rented or updated</strong>
+              </div>
+              <a class="button button-outline" href="checkout.html?plan=free">Choose free listing</a>
+              <p class="terms-note">Terms: Demo pricing only. No payment is collected in this prototype.</p>
+            </article>
+
+            <article class="pricing-card featured">
+              <p class="card-label">Featured</p>
+              <div class="price-row"><span class="currency">₹</span><span class="amount">199</span></div>
+              <p class="card-caption">7-day promotional placement</p>
+              <ul class="feature-list">
+                <li>Higher placement in search</li>
+                <li>Prominent featured badge</li>
+                <li>Improved visibility for buyers</li>
+                <li>Priority in curated recommendations</li>
+              </ul>
+              <div class="meta-row">
+                <span>Duration</span>
+                <strong>7-day campaign window</strong>
+              </div>
+              <a class="button button-primary" href="checkout.html?plan=featured">Boost my listing</a>
+              <p class="terms-note">Terms: Promotional placement is illustrative and not tied to a live ad auction.</p>
+            </article>
+
+            <article class="pricing-card">
+              <p class="card-label">Premium</p>
+              <div class="price-row"><span class="currency">₹</span><span class="amount">299</span></div>
+              <p class="card-caption">Monthly subscription for premium visibility</p>
+              <ul class="feature-list">
+                <li>Priority listing placement</li>
+                <li>Advanced analytics preview</li>
+                <li>Premium support access</li>
+                <li>Multiple promotional boosts</li>
+              </ul>
+              <div class="meta-row">
+                <span>Duration</span>
+                <strong>Monthly recurring subscription</strong>
+              </div>
+              <a class="button button-outline" href="checkout.html?plan=premium">Go premium</a>
+              <p class="terms-note">Terms: Subscription pricing is demo-only and does not create a real billing agreement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="info-grid">
+            <div class="info-panel">
+              <h3>What is included?</h3>
+              <ul>
+                <li>Rentora platform fees only cover listing services, promotional placement, and subscription access.</li>
+                <li>Featured listings increase visibility within Rentora's discovery flow.</li>
+                <li>Premium subscriptions are prepared for future recurring billing integration.</li>
+              </ul>
+            </div>
+            <div class="info-panel">
+              <h3>What is separate?</h3>
+              <ul>
+                <li>Tenant rent is the payment due for occupancy and is not handled by Rentora in this prototype.</li>
+                <li>Security deposit is a separate agreement between landlord and tenant.</li>
+                <li>Rentora does not collect or verify a tenancy deposit in this demo flow.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

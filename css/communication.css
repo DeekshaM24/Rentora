@@ -1,0 +1,76 @@
+.communication-page [hidden] { display: none !important; }
+.communication-container { width: min(1060px, calc(100% - 72px)); }
+.communication-topline { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.communication-topline .inquiry-heading > p:last-child { margin-bottom: 0; }
+.communication-topline .inquiry-heading h1 { max-width: 580px; }
+.communication-topline .inquiry-heading h1 em, .panel-heading h2 em { color: var(--mint); font-weight: 500; }
+.role-switch { display: inline-flex; flex: 0 0 auto; padding: 4px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--canvas); }
+.role-switch button { display: inline-flex; min-height: 36px; align-items: center; gap: 8px; padding: 0 12px; border: 0; border-radius: 2px; background: transparent; color: var(--ink-muted); font-size: 10px; }
+.role-switch button[aria-pressed="true"] { background: #d5c39f; color: #201f20; }
+.notification-badge { display: inline-grid; min-width: 18px; height: 18px; align-items: center; justify-content: center; padding-inline: 4px; border-radius: 10px; background: #bd795e; color: #fff8f1; font-family: var(--font-ui); font-size: 8px; font-weight: 700; line-height: 1; vertical-align: middle; }
+.role-switch button[aria-pressed="true"] .notification-badge { background: #282626; color: #f4f0e9; }
+.communication-panel { padding-top: 26px; border-top: 1px solid var(--line); }
+.communication-layout { display: grid; grid-template-columns: minmax(0,1fr) 300px; align-items: start; gap: 42px; }
+.panel-heading { margin-bottom: 20px; }
+.panel-heading .eyebrow { margin-bottom: 8px; }
+.panel-heading h2 { margin: 0; font-family: var(--font-display); font-size: 31px; font-weight: 500; line-height: 1.2; }
+.panel-heading > p:last-child { max-width: 590px; margin: 8px 0 0; color: var(--ink-muted); font-size: 11px; line-height: 1.7; }
+.communication-form { padding-top: 18px; }
+.communication-form label > span { color: var(--ink-subtle); }
+.visit-request-toggle { display: flex !important; align-items: center; gap: 9px !important; min-height: 38px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 3px; cursor: pointer; }
+.visit-request-toggle input { width: 15px; min-height: 15px; margin: 0; accent-color: var(--mint); }
+.visit-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.inquiry-form select option { background: var(--canvas-raised); }
+.prototype-note { margin: 25px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: var(--ink-subtle); font-size: 9px; }
+.owner-inbox-panel { padding-bottom: 10px; }
+.inbox-summary { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 18px 0; color: var(--ink-muted); font-size: 10px; }
+.inbox-summary strong { color: var(--ink); font-family: var(--font-ui); font-size: 14px; }
+.owner-inbox-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.inbox-card { min-width: 0; padding: 15px; border: 1px solid var(--line); border-radius: 4px; background: var(--canvas-raised); }
+.inbox-card-heading, .visit-heading { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
+.inbox-property-name { color: var(--mint); font-size: 8px; text-transform: uppercase; }
+.inbox-card h3 { margin: 3px 0 0; font-family: var(--font-ui); font-size: 13px; font-weight: 600; }
+.inbox-card h3 span { color: var(--ink-muted); font-family: var(--font-body); font-size: 9px; font-weight: 400; }
+.workflow-status { display: inline-flex; min-height: 21px; flex: 0 0 auto; align-items: center; padding: 2px 7px; border: 1px solid currentColor; border-radius: 2px; font-size: 8px; line-height: 1.3; text-transform: uppercase; }
+.status-pending { color: var(--champagne); }
+.status-accepted { color: var(--mint); }
+.status-rejected { color: var(--blush); }
+.status-rescheduled { color: #a9c8ce; }
+.status-completed { color: #c9bfd7; }
+.inbox-message { margin: 12px 0 8px; color: #d5d0c9; font-size: 10px; line-height: 1.65; }
+.inbox-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 12px; color: var(--ink-subtle); font-size: 8px; }
+.inbox-response { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+.inbox-response > p { display: grid; gap: 3px; margin: 0 0 9px; color: var(--ink-muted); font-size: 9px; line-height: 1.6; }
+.inbox-response > p strong { color: var(--mint); font-size: 8px; text-transform: uppercase; }
+.reply-form, .reschedule-form { display: grid; gap: 6px; }
+.reply-form label, .reschedule-form label { display: grid; gap: 5px; color: var(--ink-muted); font-size: 8px; }
+.reply-form textarea, .reschedule-form input, .reschedule-form select { width: 100%; min-width: 0; min-height: 34px; padding: 7px 8px; border: 1px solid var(--line-strong); border-radius: 3px; outline: none; background: #19191b; color: var(--ink); font: inherit; font-size: 9px; }
+.reply-form textarea { resize: vertical; }
+.reply-form textarea:focus, .reschedule-form input:focus, .reschedule-form select:focus { border-color: var(--mint); }
+.action-row, .inbox-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.action-button { min-height: 29px; padding: 4px 8px; border: 1px solid var(--line-strong); border-radius: 3px; background: transparent; color: var(--ink); font-size: 8px; }
+.action-button:hover { border-color: var(--mint); color: var(--mint); }
+.action-button.is-danger:hover { border-color: var(--blush); color: var(--blush); }
+.inbox-action-label { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-muted); font-size: 8px; }
+.inbox-visit { margin-top: 13px; padding-top: 11px; border-top: 1px solid var(--line); }
+.visit-heading { align-items: center; }
+.visit-heading strong { font-family: var(--font-ui); font-size: 9px; font-weight: 600; }
+.visit-date, .reschedule-note { display: block; margin-top: 7px; color: var(--ink-muted); font-size: 8px; }
+.reschedule-note { color: #a9c8ce; }
+.reschedule-form { grid-template-columns: 1fr 1fr; margin-top: 9px; }
+.reschedule-form button { justify-self: start; }
+.inbox-empty { grid-column: 1/-1; padding: 24px; border: 1px dashed var(--line-strong); color: var(--ink-muted); font-size: 10px; text-align: center; }
+.communication-page .site-footer { margin-top: 0; }
+@media (max-width: 760px) {
+  .communication-container { width: min(100% - 40px, 620px); }
+  .communication-topline { align-items: start; flex-direction: column; gap: 16px; }
+  .communication-layout { grid-template-columns: 1fr; gap: 24px; }
+  .communication-layout .inquiry-property { order: -1; }
+  .owner-inbox-list { grid-template-columns: 1fr; }
+  .panel-heading h2 { font-size: 28px; }
+}
+@media (max-width: 480px) {
+  .visit-fields, .reschedule-form { grid-template-columns: 1fr; }
+  .role-switch { width: 100%; }
+  .role-switch button { flex: 1; justify-content: center; padding-inline: 7px; }
+}

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Convenient checkout for Rentora premium services and listing upgrades.">
+    <title>Checkout | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top, rgba(201, 191, 215, 0.08), transparent 25%),
+          var(--canvas);
+      }
+      .checkout-shell {
+        padding: 86px 0 90px;
+      }
+      .checkout-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 30px;
+      }
+      .checkout-header p {
+        margin: 0;
+      }
+      .checkout-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+        gap: 28px;
+      }
+      .checkout-panel,
+      .summary-panel {
+        padding: 26px 24px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(29, 29, 32, 0.9);
+      }
+      .checkout-panel h3,
+      .summary-panel h3 {
+        margin: 0 0 18px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .plan-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 18px;
+        margin-bottom: 22px;
+        border: 1px solid rgba(213, 195, 159, 0.38);
+        border-radius: 14px;
+        background: rgba(213, 195, 159, 0.06);
+      }
+      .plan-card strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 18px;
+      }
+      .plan-meta {
+        color: var(--ink-muted);
+        font-size: 12px;
+      }
+      .plan-price {
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        color: var(--ink-muted);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+      input, select {
+        width: 100%;
+        min-height: 48px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: rgba(17, 17, 19, 0.7);
+        color: var(--ink);
+      }
+      .full-width {
+        grid-column: 1 / -1;
+      }
+      .payment-options {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 22px 0 18px;
+      }
+      .payment-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: rgba(17, 17, 19, 0.7);
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .payment-option.active {
+        border-color: rgba(213, 195, 159, 0.52);
+        background: rgba(213, 195, 159, 0.08);
+      }
+      .prototype-note {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-left: 3px solid var(--champagne);
+        border-radius: 8px;
+        background: rgba(213, 195, 159, 0.08);
+        color: rgba(244, 240, 233, 0.8);
+        font-size: 12px;
+        line-height: 1.8;
+      }
+      .summary-panel .summary-list {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+      .summary-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink-muted);
+      }
+      .summary-row strong {
+        color: var(--ink);
+      }
+      .total-row {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--line);
+      }
+      .summary-panel .button {
+        width: 100%;
+        margin-top: 18px;
+      }
+      .cancellation-box {
+        margin-top: 26px;
+        padding: 20px 22px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(36, 35, 38, 0.8);
+      }
+      .cancellation-box h4 {
+        margin: 0 0 10px;
+        font-size: 16px;
+      }
+      .cancellation-box p {
+        margin: 0;
+        color: var(--ink-muted);
+        line-height: 1.8;
+      }
+      @media (max-width: 900px) {
+        .checkout-layout,
+        .form-grid,
+        .payment-options {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html" aria-label="Rentora home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">rentora<span>.</span></span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="payment-history.html">Payments</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="button button-quiet login-button" href="login.html">Log in</a>
+          <a class="button button-small button-outline" href="owner-dashboard.html">List your property <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="checkout-shell">
+      <div class="container">
+        <div class="checkout-header">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Secure checkout</p>
+            <h2>Review and confirm your plan.</h2>
+          </div>
+          <a href="pricing.html" class="text-link">Change plan <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="checkout-layout">
+          <section class="checkout-panel" aria-labelledby="checkout-form-title">
+            <h3 id="checkout-form-title">Billing details</h3>
+
+            <div class="plan-card" aria-live="polite">
+              <div>
+                <strong>Premium Subscription</strong>
+                <span class="plan-meta">Monthly plan • INR</span>
+              </div>
+              <div class="plan-price">₹299</div>
+            </div>
+
+            <form method="dialog" novalidate>
+              <div class="form-grid">
+                <label class="full-width">
+                  Full name
+                  <input type="text" name="fullName" placeholder="Aarav Mehta" value="Aarav Mehta">
+                </label>
+                <label>
+                  Email address
+                  <input type="email" name="email" placeholder="aarav@example.com" value="aarav@example.com">
+                </label>
+                <label>
+                  Phone number
+                  <input type="tel" name="phone" placeholder="+91 98XXXXXX" value="+91 98XXXXXX">
+                </label>
+
+                <label class="full-width">
+                  Company / landlord name
+                  <input type="text" name="company" placeholder="Rentora Services Pvt Ltd" value="Rentora Services Pvt Ltd">
+                </label>
+
+                <label class="full-width">
+                  Billing country
+                  <select name="country">
+                    <option>India</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="payment-options" role="radiogroup" aria-label="Payment method">
+                <div class="payment-option active" aria-pressed="true">UPI</div>
+                <div class="payment-option" aria-pressed="false">Debit card</div>
+                <div class="payment-option" aria-pressed="false">Net banking</div>
+              </div>
+
+              <div class="form-grid">
+                <label>
+                  Payment method ID
+                  <input type="text" name="upiId" placeholder="name@upi" value="name@upi">
+                </label>
+                <label>
+                  Currency
+                  <input type="text" name="currency" value="INR" readonly>
+                </label>
+              </div>
+
+              <p class="prototype-note">This checkout is a frontend prototype for real payment integration. No real payment is processed and no card or UPI credentials are stored.</p>
+            </form>
+          </section>
+
+          <aside class="summary-panel" aria-labelledby="order-summary-title">
+            <h3 id="order-summary-title">Order summary</h3>
+            <div class="summary-list">
+              <div class="summary-row">
+                <span>Selected plan</span>
+                <strong>Premium Subscription</strong>
+              </div>
+              <div class="summary-row">
+                <span>Plan price</span>
+                <strong>₹299.00</strong>
+              </div>
+              <div class="summary-row">
+                <span>Currency</span>
+                <strong>INR</strong>
+              </div>
+              <div class="summary-row">
+                <span>Taxes / fees</span>
+                <strong>₹53.82</strong>
+              </div>
+              <div class="summary-row total-row">
+                <span>Final total</span>
+                <strong>₹352.82</strong>
+              </div>
+            </div>
+
+            <div class="summary-list">
+              <div class="summary-row">
+                <span>Rentora service fee</span>
+                <strong>₹299.00</strong>
+              </div>
+              <div class="summary-row">
+                <span>Tenant rent / security deposit</span>
+                <strong>Separate</strong>
+              </div>
+            </div>
+
+            <a class="button button-primary" href="payment-history.html">Continue to demo payment</a>
+          </aside>
+        </div>
+
+        <div class="cancellation-box" aria-label="Cancellation notice">
+          <h4>Cancellation / refund information</h4>
+          <p>Service fees are for Rentora's platform access and promotional placement only. Tenant rent and security deposit remain separate agreements between landlord and tenant. This prototype is not a live billing system, so no real refund or cancellation is processed here.</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Create a roommate lifestyle profile and explore transparent preference matches with Rentora.">
+    <title>Roommate Matching | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/roommates.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/roommates.js" defer></script>
+  </head>
+  <body class="roommates-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><button class="menu-toggle icon-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="roommate-navigation"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><nav class="primary-nav" id="roommate-navigation" aria-label="Main navigation"><a href="../index.html">Home</a><a href="listings.html">Explore</a><a href="favorites.html">Favorites</a><a href="roommates.html" aria-current="page">Roommates</a><a href="profile.html">Profile</a><a href="compare.html">Compare</a></nav><div class="nav-actions"><a class="button button-small button-outline" href="listings.html">Explore homes <span aria-hidden="true">↗</span></a></div></div></header>
+
+    <main id="main-content" class="roommates-main">
+      <div class="container roommates-container">
+        <nav class="roommate-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>Roommates</span></nav>
+        <section class="roommates-intro"><div><p class="eyebrow"><span class="eyebrow-line"></span> Good homes are better shared</p><h1>Find a housemate who fits <em>your everyday.</em></h1><p>Start with how you live: routines, budget, and the small things that make sharing feel easy.</p></div><a class="button button-outline" href="#lifestyle-profile">Build your profile <span aria-hidden="true">↓</span></a></section>
+
+        <section class="matching-note" aria-label="Preference match explanation"><span class="matching-note-mark" aria-hidden="true">i</span><div><strong>Preference Match is a guide, not a compatibility guarantee.</strong><p>Scores compare the preferences you enter with demo profiles. They do not assess character, safety, or whether a shared home will work out.</p></div><a href="#matching-method">How scores work</a></section>
+
+        <section class="profile-builder" id="lifestyle-profile" aria-labelledby="profile-title"><div class="profile-builder-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Your roommate profile</p><h2 id="profile-title">The way you <em>live.</em></h2><p>Required details are stored only in this browser prototype.</p></div><span class="saved-profile-status" id="saved-profile-status" role="status" aria-live="polite">No profile saved</span></div>
+          <form id="roommate-profile-form" novalidate>
+            <div class="roommate-form-grid">
+              <label for="roommate-name">Name<input id="roommate-name" name="name" maxlength="80" autocomplete="name" required></label>
+              <label for="roommate-age">Age<input id="roommate-age" name="age" type="number" min="18" max="110" step="1" required><span>Must be 18 or older to create a profile.</span></label>
+              <label for="roommate-occupation">Occupation / student status<input id="roommate-occupation" name="occupation" maxlength="100" placeholder="Designer, graduate student…" required></label>
+              <label for="roommate-location">Preferred location<input id="roommate-location" name="location" maxlength="100" placeholder="City or neighborhood" required></label>
+              <label for="roommate-budget">Monthly budget<input id="roommate-budget" name="budget" type="number" min="0" max="100000" step="50" placeholder="$" required></label>
+              <label for="roommate-move-date">Move-in date<input id="roommate-move-date" name="moveInDate" type="date" required></label>
+              <label for="roommate-gender-preference">Housemate gender preference <span>(optional)</span><select id="roommate-gender-preference" name="genderPreference"><option value="No preference">No preference</option><option value="Women">Women</option><option value="Men">Men</option><option value="Non-binary people">Non-binary people</option><option value="Self-described">Self-described</option></select><span>Only use where permitted by local housing law. Private and excluded from matching.</span></label>
+              <label for="roommate-sleep">Sleep schedule<select id="roommate-sleep" name="sleep" required><option value="">Choose a preference</option><option>Early bird</option><option>Flexible</option><option>Night owl</option></select></label>
+              <label for="roommate-cleanliness">Cleanliness preference<select id="roommate-cleanliness" name="cleanliness" required><option value="">Choose a preference</option><option>Very tidy</option><option>Tidy</option><option>Relaxed</option><option>Flexible</option></select></label>
+              <label for="roommate-smoking">Smoking preference<select id="roommate-smoking" name="smoking" required><option value="">Choose a preference</option><option>Non-smoker</option><option>Outside only</option><option>Comfortable with smoking</option><option>Flexible</option></select></label>
+              <label for="roommate-pets">Pet preference<select id="roommate-pets" name="pets" required><option value="">Choose a preference</option><option>No pets</option><option>Pets welcome</option><option>Have pets</option><option>Flexible</option></select></label>
+              <label for="roommate-food">Food preference<select id="roommate-food" name="food" required><option value="">Choose a preference</option><option>Omnivore</option><option>Vegetarian</option><option>Vegan</option><option>No preference</option></select></label>
+              <label for="roommate-work-schedule">Work / study schedule<select id="roommate-work-schedule" name="workSchedule" required><option value="">Choose a preference</option><option>9 to 5</option><option>Work from home</option><option>Student schedule</option><option>Flexible schedule</option><option>Shift work</option><option>No preference</option></select></label>
+              <label for="roommate-social">Social preference<select id="roommate-social" name="social" required><option value="">Choose a preference</option><option>Quiet</option><option>Occasional company</option><option>Social</option><option>Flexible</option></select></label>
+              <label for="roommate-noise">Noise tolerance<select id="roommate-noise" name="noise" required><option value="">Choose a preference</option><option>Low</option><option>Moderate</option><option>High</option><option>Flexible</option></select></label>
+            </div>
+            <fieldset class="roommate-privacy"><legend>Privacy controls</legend><label><input id="roommate-discoverable" name="discoverable" type="checkbox"> Show my profile summary in the private preview below</label><p>Your profile is not published or sent to anyone. Age and gender preference are never shown on cards. No contact information is collected or revealed.</p></fieldset>
+            <p class="roommate-form-error" id="roommate-profile-error" role="alert" hidden></p><p class="roommate-form-success" id="roommate-profile-success" role="status" aria-live="polite" hidden></p>
+            <div class="profile-save-row"><button class="button button-primary" type="submit">Save roommate profile</button><button class="profile-reset" id="clear-roommate-profile" type="button">Clear profile from this browser</button></div>
+          </form>
+        </section>
+
+        <section class="matching-method" id="matching-method"><details><summary>How Preference Match is calculated</summary><div class="method-content"><p>We compare 11 lifestyle dimensions. For sleep schedule and cleanliness, differing selections earn 35% and 50% of that category's weight; a shared value or a flexible selection earns full weight. Other different lifestyle selections earn no weight. Location earns full weight when city or neighborhood text overlaps. Budget is the lower budget divided by the higher budget. Move-in dates earn full weight within 7 days, 75% within 30 days, 50% within 60 days, and no weight beyond that.</p><ul><li>Location: 20%</li><li>Budget: 20%</li><li>Move-in timing: 10%</li><li>Sleep schedule, cleanliness, smoking, and pets: 8% each</li><li>Food preference and work / study schedule: 5% each</li><li>Social preference and noise tolerance: 4% each</li></ul><p>Age, occupation, and gender preference are not scored. The result is a preference comparison only; talk directly and make your own decision.</p></div></details></section>
+
+        <section class="roommate-matches-section" aria-labelledby="matches-title"><div class="roommate-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> A few people to start with</p><h2 id="matches-title">Roommate <em>profiles.</em></h2><p id="match-summary">Save your profile to see preference matches.</p></div><label class="match-sort-label" for="match-sort">Sort<select id="match-sort"><option value="match">Preference Match</option><option value="location">Location</option><option value="budget">Budget</option></select></label></div><div class="profile-required-callout" id="profile-required-callout" hidden><div><strong>Build your profile to see your Preference Match.</strong><p>Demo profiles are available to browse now. Scores appear after your lifestyle profile is saved.</p></div><a href="#lifestyle-profile">Create profile <span aria-hidden="true">↑</span></a></div><div class="roommate-empty" id="no-roommates-empty" hidden><h3>No profiles to show yet.</h3><p>Check back as more roommate profiles are added.</p></div><div class="roommate-match-grid" id="roommate-match-grid"></div></section>
+
+        <section class="local-profile-preview" id="local-profile-preview" hidden aria-labelledby="preview-title"><div><p class="eyebrow"><span class="eyebrow-line"></span> Only visible in this browser</p><h2 id="preview-title">Your local <em>profile preview.</em></h2></div><p id="preview-summary"></p></section>
+
+        <section class="connection-section" aria-labelledby="connection-title"><div class="roommate-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Keep track of your introductions</p><h2 id="connection-title">Connection <em>requests.</em></h2><p>Requests are saved on this device only; no messages or contact details are shared.</p></div></div><p class="request-feedback" id="request-feedback" role="status" aria-live="polite"></p><div class="request-list" id="incoming-requests"></div><h3 class="outgoing-title">Sent requests</h3><div class="request-list" id="outgoing-requests"></div></section>
+
+        <p class="roommate-storage-disclosure">Rentora does not provide background checks, verify these demo profiles, or guarantee compatibility. Profile details, saves, and request states stay in localStorage on this device.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><p class="footer-tagline">Find a place that feels like home.</p><div class="footer-links"><a href="listings.html">Explore homes</a><a href="favorites.html">Favorites</a><a href="profile.html">Profile</a><a href="compare.html">Compare</a></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><span>Made for the feeling of home.</span></div></footer>
+
+    <dialog class="roommate-dialog" id="roommate-dialog" aria-labelledby="roommate-dialog-title"><form method="dialog" class="dialog-close-form"><button class="icon-button dialog-close" aria-label="Close profile"><span aria-hidden="true">×</span></button></form><div id="roommate-dialog-content"></div></dialog>
+  </body>
+</html>

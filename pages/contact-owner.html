@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <title>Contact Owner | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="inquiry.css">
+    <link rel="stylesheet" href="../css/communication.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/communication-store.js" defer></script>
+    <script src="../js/communication.js" defer></script>
+  </head>
+  <body class="inquiry-page communication-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><a class="button button-small button-outline" href="dashboard.html">My dashboard <span class="notification-badge" id="dashboard-nav-badge" aria-label="notifications">0</span></a></div></header>
+    <main id="main-content" class="inquiry-main"><div class="container inquiry-container communication-container">
+      <a class="inquiry-back" id="property-back" href="listings.html">← Back to property</a>
+      <div class="communication-topline"><div class="inquiry-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Property conversations</p><h1 id="communication-title">A clearer way to <em>connect.</em></h1><p>Send a property enquiry or request a visit. This local demo stores activity in this browser only.</p></div><div class="role-switch" role="group" aria-label="Choose demo view"><button type="button" data-view="renter" aria-pressed="true">Renter</button><button type="button" data-view="owner" aria-pressed="false">Owner inbox <span class="notification-badge" id="owner-nav-badge">0</span></button></div></div>
+      <section class="communication-panel" id="renter-panel" data-role-panel="renter" aria-labelledby="renter-title"><div class="communication-layout"><section><div class="panel-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Renter workspace</p><h2 id="renter-title">Write to the <em>owner.</em></h2><p>Choose a topic, add your note, and optionally request a visit in the same enquiry.</p></div><form class="inquiry-form communication-form" id="communication-form"><label for="renter-name">Your name<input id="renter-name" name="name" autocomplete="name" maxlength="80" required></label><label for="renter-email">Email address<input id="renter-email" name="email" type="email" autocomplete="email" maxlength="120" required></label><label for="property-select">Property<select id="property-select" name="propertyId" required></select></label><label for="enquiry-type">Enquiry type<select id="enquiry-type" name="type" required><option value="">Choose a topic</option><option>Availability</option><option>Property details</option><option>Lease terms</option><option>Move-in timing</option><option>Other question</option></select></label><label for="enquiry-message">Message<textarea id="enquiry-message" name="message" minlength="10" maxlength="1200" placeholder="What would you like the owner to know?" required></textarea></label><label class="visit-request-toggle" for="request-visit"><input id="request-visit" name="requestVisit" type="checkbox"><span>Request a property visit</span></label><div class="visit-fields" id="visit-fields" hidden><label for="visit-date">Preferred date<input id="visit-date" name="date" type="date"></label><label for="visit-time">Preferred time<select id="visit-time" name="time"><option value="">Choose a time</option><option>Morning, 9 am–12 pm</option><option>Afternoon, 12–4 pm</option><option>Early evening, 4–7 pm</option></select></label></div><button class="button button-primary" type="submit">Save enquiry <span aria-hidden="true">→</span></button><p class="inquiry-disclosure">Saved locally for this demo only. No email, message, visit request, or live conversation is sent or booked.</p><p class="inquiry-status" id="communication-status" role="status" aria-live="polite"></p></form></section><aside class="inquiry-property" id="inquiry-property" aria-label="Selected property"></aside></div></section>
+      <section class="communication-panel owner-inbox-panel" id="owner-panel" data-role-panel="owner" aria-labelledby="owner-title" hidden><div class="panel-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Owner workspace · demo</p><h2 id="owner-title">Enquiries & <em>visits.</em></h2><p>Review local demo requests and update their status. Replies stay in this browser; nothing is sent to renters.</p></div><div class="inbox-summary"><span><strong id="pending-enquiry-count">0</strong> pending enquiries</span><span><strong id="pending-visit-count">0</strong> pending visits</span></div><div class="owner-inbox-list" id="owner-inbox-list" aria-live="polite"></div><p class="inquiry-disclosure">This owner view is a frontend prototype, not a connected account or real-time inbox.</p></section>
+      <p class="prototype-note">All names and activity are illustrative demo data. No real-time communication is available.</p>
+    </div></main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><a href="dashboard.html">Open renter dashboard</a></div></footer>
+  </body>
+</html>

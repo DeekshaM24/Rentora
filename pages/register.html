@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Create a Rentora renter or property owner account.">
+    <title>Create Account | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <script src="../js/auth.js" defer></script>
+  </head>
+  <body class="auth-page" data-auth-page="register">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="auth-header"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><a class="auth-return" href="../index.html">Back to Rentora <span aria-hidden="true">↗</span></a></header>
+    <main id="main-content" class="auth-main"><div class="auth-layout auth-layout-register"><section class="auth-visual" aria-label="A welcoming Rentora home"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1300&q=84" alt="Modern home opening onto a quiet garden"><div class="auth-visual-shade"></div><div class="auth-visual-copy"><p class="eyebrow"><span class="eyebrow-line"></span> Room for what's next</p><h1>A good home<br>changes <em>everything.</em></h1><p>Make space for a place and a pace that feel right.</p></div></section><section class="auth-panel" aria-labelledby="auth-title"><div class="auth-form-wrap"><p class="eyebrow"><span class="eyebrow-line"></span> Start your next chapter</p><h2 id="auth-title">Create an <em>account.</em></h2><p class="auth-intro">Set up your Rentora profile.</p><form class="auth-form register-form" id="register-form" method="post" action="#" data-endpoint="/api/auth/register" novalidate>
+      <div class="register-fields"><label for="register-name">Full name<input id="register-name" name="name" type="text" autocomplete="name" maxlength="100" required></label><label for="register-email">Email address<input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" required></label><label for="register-phone">Phone number<input id="register-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required></label><label for="account-type">Account type<select id="account-type" name="accountType" required><option value="">Choose an account type</option><option value="renter">Renter</option><option value="owner">Property Owner</option></select></label><label for="register-password">Password<span class="password-control"><input id="register-password" name="password" type="password" autocomplete="new-password" required aria-describedby="password-guidance register-error"><button type="button" class="password-toggle" data-toggle-password="register-password" aria-label="Show password" aria-pressed="false">Show</button></span><span class="password-guidance" id="password-guidance">Use 8+ characters with upper and lowercase letters, a number, and a symbol.</span><span class="strength-track" aria-hidden="true"><span id="password-strength-bar"></span></span><span id="password-strength-label" class="strength-label">Password strength</span></label><label for="register-confirm">Confirm password<span class="password-control"><input id="register-confirm" name="confirmPassword" type="password" autocomplete="new-password" required aria-describedby="register-error"><button type="button" class="password-toggle" data-toggle-password="register-confirm" aria-label="Show password" aria-pressed="false">Show</button></span></label></div>
+      <p class="auth-error" id="register-error" role="alert" hidden></p><p class="auth-status" id="register-status" role="status" aria-live="polite" hidden></p>
+      <button class="button button-primary auth-submit" type="submit" disabled>Create account <span aria-hidden="true">→</span></button>
+      <p class="auth-prototype-note">Registration is a frontend preview. No account is created and no information is sent or stored.</p>
+    </form><p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p></div></section></div></main>
+    <footer class="auth-footer"><span>© <span data-current-year></span> Rentora</span><span>Account creation is not connected to backend authentication.</span></footer>
+  </body>
+</html>

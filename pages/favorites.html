@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Keep your favorite Rentora homes and roommate profiles together in one place.">
+    <title>Your Favorites | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/account.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/account.js" defer></script>
+  </head>
+  <body class="account-page" data-account-page="favorites">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><button class="menu-toggle icon-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="account-navigation"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><nav class="primary-nav" id="account-navigation" aria-label="Main navigation"><a href="../index.html">Home</a><a href="listings.html">Explore</a><a href="favorites.html" aria-current="page">Favorites</a><a href="roommates.html">Roommates</a><a href="profile.html">Profile & preferences</a><a href="compare.html">Compare</a></nav><div class="nav-actions"><a class="button button-small button-outline" href="listings.html">Explore homes <span aria-hidden="true">↗</span></a></div></div></header>
+    <main id="main-content" class="account-main">
+      <div class="container account-container">
+        <nav class="account-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>Favorites</span></nav>
+        <section class="account-intro"><div><p class="eyebrow"><span class="eyebrow-line"></span> Your shortlist</p><h1>The places and people <em>you come back to.</em></h1><p>Keep the homes and roommate profiles that feel worth another look.</p></div><a class="button button-outline" href="profile.html">Profile & preferences <span aria-hidden="true">↗</span></a></section>
+
+        <section class="account-section favorite-properties-section" aria-labelledby="favorite-properties-title"><div class="account-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Find your next place</p><h2 id="favorite-properties-title">Favorite <em>homes.</em></h2></div><span class="account-count" id="favorite-property-count">0 homes</span></div><p class="account-notice" id="account-notice" role="status" aria-live="polite"></p><div class="account-empty" id="favorite-properties-empty" hidden><h3>Your home shortlist is open.</h3><p>Save a property with its heart button and it will appear here.</p><a href="listings.html" class="text-link">Explore homes <span aria-hidden="true">↗</span></a></div><div class="property-grid account-property-grid" id="favorite-properties-grid"></div></section>
+
+        <section class="account-section roommate-favorites-section" aria-labelledby="roommate-favorites-title"><div class="account-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Shared living, thoughtfully</p><h2 id="roommate-favorites-title">Favorite <em>roommates.</em></h2></div><span class="account-count" id="favorite-roommate-count">0 profiles</span></div><div class="account-empty" id="favorite-roommates-empty" hidden><h3>No roommate favorites yet.</h3><p>Save a demo profile below to keep a potential housemate on your shortlist.</p></div><div class="roommate-grid favorite-roommate-grid" id="favorite-roommates-grid"></div></section>
+
+        <section class="account-section roommate-discovery-section" id="roommates" aria-labelledby="roommate-discovery-title"><div class="account-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Demo profiles</p><h2 id="roommate-discovery-title">People to <em>meet.</em></h2></div><p class="demo-disclosure">Illustrative profiles only. No messages or matching are available.</p></div><div class="roommate-grid" id="roommate-discovery-grid"></div></section>
+        <p class="storage-note">Favorites are stored in this browser for this prototype and are not synced to an account.</p>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><p class="footer-tagline">Find a place that feels like home.</p><div class="footer-links"><a href="listings.html">Explore homes</a><a href="profile.html">Profile</a><a href="compare.html">Compare</a></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><span>Made for the feeling of home.</span></div></footer>
+  </body>
+</html>

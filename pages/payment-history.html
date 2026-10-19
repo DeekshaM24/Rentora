@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Demo payment history for Rentora premium services and listing fees.">
+    <title>Payment History | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      body {
+        background: var(--canvas);
+      }
+      .history-shell {
+        padding: 88px 0 100px;
+      }
+      .history-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 26px;
+      }
+      .history-note {
+        margin: 12px 0 0;
+        color: var(--ink-muted);
+        font-size: 13px;
+        line-height: 1.7;
+      }
+      .history-panel {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(29, 29, 32, 0.9);
+      }
+      .history-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .history-table th,
+      .history-table td {
+        padding: 18px 20px;
+        text-align: left;
+      }
+      .history-table thead th {
+        color: var(--ink-subtle);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .history-table tbody tr + tr {
+        border-top: 1px solid var(--line);
+      }
+      .history-table td {
+        color: rgba(244, 240, 233, 0.82);
+        font-size: 13px;
+      }
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .status-pending {
+        background: rgba(213, 195, 159, 0.12);
+        color: var(--champagne);
+      }
+      .status-muted {
+        background: rgba(170, 166, 161, 0.12);
+        color: var(--ink-muted);
+      }
+      .status-draft {
+        background: rgba(201, 191, 215, 0.12);
+        color: var(--lavender);
+      }
+      .status-failed {
+        background: rgba(227, 184, 180, 0.12);
+        color: var(--blush);
+      }
+      .receipt-link {
+        color: var(--champagne);
+        font-weight: 700;
+      }
+      @media (max-width: 900px) {
+        .history-table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html" aria-label="Rentora home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">rentora<span>.</span></span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="payment-history.html">Payments</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="button button-quiet login-button" href="login.html">Log in</a>
+          <a class="button button-small button-outline" href="owner-dashboard.html">List your property <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="history-shell">
+      <div class="container">
+        <div class="history-header">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Payment history</p>
+            <h2>Service activity and billing record.</h2>
+          </div>
+          <a class="button button-small button-outline" href="pricing.html">View pricing</a>
+        </div>
+
+        <p class="history-note">This is a demo payment-history view prepared for future payment integration. No payment is confirmed as successful in this prototype.</p>
+
+        <section class="history-panel" aria-label="Payment history table">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Date</th>
+                <th>Service</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Status</th>
+                <th>Receipt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#REN-2026-101</td>
+                <td>21 Sep 2026</td>
+                <td>Featured Listing</td>
+                <td>₹199.00</td>
+                <td>INR</td>
+                <td><span class="status-pill status-pending">Pending</span></td>
+                <td><a class="receipt-link" href="#">Download</a></td>
+              </tr>
+              <tr>
+                <td>#REN-2026-088</td>
+                <td>14 Sep 2026</td>
+                <td>Premium Subscription</td>
+                <td>₹299.00</td>
+                <td>INR</td>
+                <td><span class="status-pill status-muted">Not charged</span></td>
+                <td><a class="receipt-link" href="#">Preview</a></td>
+              </tr>
+              <tr>
+                <td>#REN-2026-061</td>
+                <td>04 Sep 2026</td>
+                <td>Free Listing</td>
+                <td>₹0.00</td>
+                <td>INR</td>
+                <td><span class="status-pill status-draft">Draft</span></td>
+                <td><a class="receipt-link" href="#">View</a></td>
+              </tr>
+              <tr>
+                <td>#REN-2026-055</td>
+                <td>28 Aug 2026</td>
+                <td>Featured Listing</td>
+                <td>₹199.00</td>
+                <td>INR</td>
+                <td><span class="status-pill status-failed">Failed</span></td>
+                <td><a class="receipt-link" href="#">Receipt</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <title>Schedule a Visit | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="inquiry.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/inquiry.js" defer></script>
+  </head>
+  <body class="inquiry-page" data-inquiry-kind="visit">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><a class="button button-small button-outline" href="listings.html">Explore homes <span aria-hidden="true">↗</span></a></div></header>
+    <main id="main-content" class="inquiry-main"><div class="container inquiry-container"><a class="inquiry-back" id="property-back" href="listings.html">← Back to property</a><div class="inquiry-layout"><section><div class="inquiry-heading"><p class="eyebrow"><span class="eyebrow-line"></span> See if it feels like home</p><h1 id="inquiry-title">Plan a time to visit.</h1><p>Choose a preferred time and leave a note for the owner. This request is not sent and no visit is booked in this frontend prototype.</p></div><form class="inquiry-form" id="inquiry-form"><label for="inquiry-name">Your name<input id="inquiry-name" name="name" autocomplete="name" required></label><label for="inquiry-email">Email address<input id="inquiry-email" name="email" type="email" autocomplete="email" required></label><label for="visit-date">Preferred date<input id="visit-date" name="date" type="date" required></label><label for="visit-time">Preferred time<select id="visit-time" name="time" required><option value="">Choose a time</option><option>Morning, 9 am–12 pm</option><option>Afternoon, 12–4 pm</option><option>Early evening, 4–7 pm</option></select></label><label for="visit-note">Note for the owner <span>(optional)</span><textarea id="visit-note" name="note" maxlength="600" rows="3" placeholder="Anything the owner should know about your visit?"></textarea></label><button class="button button-primary" id="inquiry-submit" type="submit">Review visit request</button><p class="inquiry-disclosure">No appointment is booked and no request is sent. Confirm a visit directly with a verified owner.</p><p class="inquiry-status" id="inquiry-status" role="status" aria-live="polite"></p></form></section><aside class="inquiry-property" id="inquiry-property" aria-label="Selected property"></aside></div></div></main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><a href="../index.html">Find a place that feels like home.</a></div></footer>
+  </body>
+</html>

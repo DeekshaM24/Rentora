@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Explore a Rentora home in detail, review move-in costs, and contact the owner.">
+    <title>Property Details | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/property.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/property.js" defer></script>
+  </head>
+  <body class="property-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a>
+        <button class="menu-toggle icon-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="property-navigation"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+        <nav class="primary-nav" id="property-navigation" aria-label="Main navigation"><a href="listings.html">Explore homes</a><a href="favorites.html">Favorites</a><a href="roommates.html">Roommates</a><a href="profile.html">Profile</a><a href="compare.html">Compare</a></nav>
+        <div class="nav-actions"><a class="button button-small button-outline" href="listings.html">All homes <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </header>
+
+    <main id="main-content" class="property-main">
+      <div class="container property-container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="listings.html">Explore homes</a><span aria-hidden="true">/</span><span id="breadcrumb-property">Property</span></nav>
+        <section class="detail-heading" aria-labelledby="property-title"><div><p class="eyebrow"><span class="eyebrow-line"></span><span id="property-type">Rental home</span><span class="heading-rating">★ <span id="property-rating"></span></span></p><h1 id="property-title">Property details</h1><p class="detail-location" id="property-location"></p></div><div class="heading-actions"><button class="favorite-toggle detail-favorite" type="button" id="favorite-button" aria-pressed="false" aria-label="Save this property"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.8 8.9c0 4.1-8.8 10-8.8 10S3.2 13 3.2 8.9A4.2 4.2 0 0 1 7.4 4.7c1.8 0 3.3.9 4.6 2.6 1.3-1.7 2.8-2.6 4.6-2.6a4.2 4.2 0 0 1 4.2 4.2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Save</span></button><button class="compare-toggle detail-compare" type="button" id="compare-button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 5v14m0-14L4.5 7.5M7 5l2.5 2.5M17 19V5m0 14 2.5-2.5M17 19l-2.5-2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Add to compare</span></button></div></section>
+
+        <section class="gallery" aria-label="Property photo gallery"><div class="gallery-main"><button class="gallery-open" id="gallery-open" type="button" aria-label="Open photo gallery"><img id="gallery-main-image" alt=""><span class="gallery-count" id="gallery-count"></span></button><button class="gallery-arrow gallery-previous" id="gallery-previous" type="button" aria-label="Previous photo"><span aria-hidden="true">←</span></button><button class="gallery-arrow gallery-next" id="gallery-next" type="button" aria-label="Next photo"><span aria-hidden="true">→</span></button></div><div class="gallery-thumbnails" id="gallery-thumbnails" aria-label="Choose a property photo"></div></section><p class="gallery-note">Additional images are representative Rentora demo photography.</p>
+
+        <div class="property-layout">
+          <div class="property-primary-column">
+            <section class="property-overview" aria-label="Property overview"><div class="overview-rent"><span id="monthly-rent"></span><small> / month</small></div><p class="overview-address" id="overview-address"></p><div class="overview-facts" id="overview-facts"></div></section>
+            <section class="detail-section description-section"><p class="eyebrow"><span class="eyebrow-line"></span> The home</p><h2>A considered place to <em>settle in.</em></h2><p id="property-description"></p></section>
+            <section class="detail-section"><p class="eyebrow"><span class="eyebrow-line"></span> What comes with it</p><h2>Thoughtful <em>details.</em></h2><div class="amenity-list" id="property-amenities"></div></section>
+            <section class="detail-section rules-section"><p class="eyebrow"><span class="eyebrow-line"></span> Before you settle in</p><h2>Property <em>rules.</em></h2><ul class="property-rules" id="property-rules"></ul></section>
+            <section class="owner-section-detail"><div class="owner-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Your point of contact</p><h2>Meet the <em>owner.</em></h2></div><span class="verification-badge" id="verification-badge"></span></div><div class="owner-profile"><span class="owner-avatar" id="owner-avatar" aria-hidden="true"></span><div class="owner-copy"><h3 id="owner-name"></h3><p id="owner-role"></p><span id="owner-since"></span></div><span class="owner-response">Usually replies<br><strong>within a day</strong></span></div><p class="owner-note">Owner information is illustrative demo content. Verify identity and property details before making arrangements.</p></section>
+            <section class="safety-section"><span class="safety-icon" aria-hidden="true">!</span><div><h2>A safer way to <em>rent.</em></h2><ul><li>View the home and confirm the owner’s identity before signing.</li><li>Review the lease and all charges in writing.</li><li>Never send deposits or rent before independently verifying the listing.</li></ul><p>Rentora does not process payments or guarantee a listing.</p></div></section>
+          </div>
+
+          <aside class="property-sidebar" aria-label="Rent and contact information"><section class="cost-card"><p class="eyebrow"><span class="eyebrow-line"></span> Plan your move</p><h2>Estimated move-in <em>cost.</em></h2><p class="estimate-note">An estimate based on the charges disclosed in this listing. Confirm final amounts with the owner.</p><div class="cost-lines" id="cost-lines"></div><div class="cost-total"><span>Estimated initial cost</span><strong id="cost-total"></strong></div><p class="cost-caveat" id="cost-caveat"></p><p class="available-date"><span>Available from</span><strong id="available-date"></strong></p><div class="sidebar-actions"><a class="button button-primary" id="contact-owner" href="#">Contact owner <span aria-hidden="true">→</span></a><a class="button button-outline" id="schedule-visit" href="#">Schedule a visit</a><button class="report-button" id="report-listing" type="button">Report this listing</button><p class="action-disclosure">Prototype only. Messages and visit requests are not sent.</p><p id="property-action-status" role="status" aria-live="polite"></p></div></section></aside>
+        </div>
+
+        <section class="similar-section" aria-labelledby="similar-title"><div class="similar-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Keep looking around</p><h2 id="similar-title">Similar <em>places.</em></h2></div><a class="text-link" href="listings.html">See all homes <span aria-hidden="true">↗</span></a></div><div class="property-grid similar-grid" id="similar-properties"></div></section>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><p class="footer-tagline">Find a place that feels like home.</p><div class="footer-links"><a href="listings.html">Explore homes</a><a href="listings.html#favorites-section">Favorites</a><a href="compare.html">Compare</a></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><span>Made for the feeling of home.</span></div></footer>
+
+    <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Property photo viewer"><button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close gallery">×</button><button class="lightbox-arrow lightbox-previous" id="lightbox-previous" type="button" aria-label="Previous photo">←</button><figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure><button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next photo">→</button></dialog>
+    <dialog class="notice-dialog report-dialog" id="report-dialog" aria-labelledby="report-title"><form method="dialog" class="dialog-close-form"><button class="icon-button dialog-close" aria-label="Close report dialog"><span aria-hidden="true">×</span></button></form><p class="eyebrow">Help keep listings clear</p><h2 id="report-title">Report this <em>listing.</em></h2><p>Choose a reason. This prototype will not submit a report.</p><form id="report-form"><label for="report-reason">Reason</label><select id="report-reason" required><option value="">Choose a reason</option><option>Incorrect information</option><option>Suspicious listing</option><option>Possible duplicate</option><option>Other concern</option></select><label for="report-notes">Additional details <span>(optional)</span></label><textarea id="report-notes" rows="3" maxlength="400"></textarea><button class="button button-primary" type="submit">Review report</button><p class="form-prototype-note" id="report-status" role="status" aria-live="polite">No report is sent or stored.</p></form></dialog>
+  </body>
+</html>

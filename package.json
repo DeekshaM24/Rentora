@@ -1,0 +1,25 @@
+{
+  "name": "rentora",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rentora rental discovery and roommate-matching platform foundation",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "node --test server/tests/*.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.2.3",
+    "supertest": "^7.1.4"
+  }
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Sign in to your Rentora account.">
+    <title>Log In | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <script src="../js/auth.js" defer></script>
+  </head>
+  <body class="auth-page" data-auth-page="login">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="auth-header"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><a class="auth-return" href="../index.html">Back to Rentora <span aria-hidden="true">↗</span></a></header>
+    <main id="main-content" class="auth-main"><div class="auth-layout"><section class="auth-visual" aria-label="A welcoming Rentora home"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1300&q=84" alt="Warm, sunlit living room with natural wood details"><div class="auth-visual-shade"></div><div class="auth-visual-copy"><p class="eyebrow"><span class="eyebrow-line"></span> A more considered way to rent</p><h1>Find a place that<br>feels like <em>home.</em></h1><p>Your next chapter starts with the right front door.</p></div></section><section class="auth-panel" aria-labelledby="auth-title"><div class="auth-form-wrap"><p class="eyebrow"><span class="eyebrow-line"></span> Welcome back</p><h2 id="auth-title">Log in to <em>Rentora.</em></h2><p class="auth-intro">Pick up where you left off.</p><form class="auth-form" id="login-form" method="post" action="#" data-endpoint="/api/auth/login" novalidate>
+      <label for="login-email">Email address<input id="login-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="login-error"></label>
+      <label for="login-password">Password<span class="password-control"><input id="login-password" name="password" type="password" autocomplete="current-password" required aria-describedby="login-error"><button type="button" class="password-toggle" data-toggle-password="login-password" aria-label="Show password" aria-pressed="false">Show</button></span></label>
+      <div class="login-options"><label class="check-label"><input id="remember-me" name="rememberMe" type="checkbox"> Remember me</label><a href="forgot-password.html">Forgot password?</a></div>
+      <p class="auth-error" id="login-error" role="alert" hidden></p><p class="auth-status" id="login-status" role="status" aria-live="polite" hidden></p>
+      <button class="button button-primary auth-submit" type="submit" disabled>Log in <span aria-hidden="true">→</span></button>
+      <p class="auth-prototype-note">Sign-in is a frontend preview. No credentials are sent or saved.</p>
+    </form><p class="auth-switch">New to Rentora? <a href="register.html">Create an account</a></p></div></section></div></main>
+    <footer class="auth-footer"><span>© <span data-current-year></span> Rentora</span><span>Your account experience is not connected to backend authentication.</span></footer>
+  </body>
+</html>

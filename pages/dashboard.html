@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Review your saved Rentora homes, enquiries, visits, and notifications.">
+    <title>Your Dashboard | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/communication-store.js" defer></script>
+    <script src="../js/dashboard.js" defer></script>
+  </head>
+  <body class="account-page dashboard-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><button class="menu-toggle icon-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dashboard-navigation"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button><nav class="primary-nav" id="dashboard-navigation" aria-label="Main navigation"><a href="../index.html">Home</a><a href="listings.html">Explore</a><a href="favorites.html">Favorites</a><a href="roommates.html">Roommates</a><a href="dashboard.html" aria-current="page">Dashboard <span class="notification-badge" id="nav-notification-badge">0</span></a></nav><div class="nav-actions"><a class="button button-small button-outline" href="listings.html">Explore homes <span aria-hidden="true">↗</span></a></div></div></header>
+    <main id="main-content" class="account-main dashboard-main">
+      <div class="container account-container">
+        <nav class="account-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><span>Dashboard</span></nav>
+        <section class="account-intro dashboard-intro"><div><p class="eyebrow"><span class="eyebrow-line"></span> Renter workspace · local demo</p><h1>Your next move, <em>in one place.</em></h1><p>Keep an eye on the homes, conversations, and plans you have started.</p></div><a class="button button-primary" href="listings.html">Explore homes <span aria-hidden="true">↗</span></a></section>
+        <div class="dashboard-notice"><span class="notice-mark" aria-hidden="true">i</span><p>Demo activity is stored in this browser. Enquiries and replies are not sent, and visits are not booked.</p></div>
+        <nav class="dashboard-jump-nav" aria-label="Dashboard sections"><a href="#saved-properties">Saved homes <span class="notification-badge" id="saved-nav-badge">0</span></a><a href="#enquiries">Enquiries <span class="notification-badge" id="enquiry-nav-badge">0</span></a><a href="#scheduled-visits">Visits <span class="notification-badge" id="visit-nav-badge">0</span></a><a href="#roommate-requests">Roommates <span class="notification-badge" id="roommate-nav-badge">0</span></a><a href="#notifications">Notifications <span class="notification-badge" id="notification-nav-badge">0</span></a></nav>
+
+        <section class="dashboard-section" id="saved-properties" aria-labelledby="saved-title"><div class="dashboard-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Your shortlist</p><h2 id="saved-title">Saved <em>properties.</em></h2></div><span class="section-badge" id="saved-count">0</span></div><div class="dashboard-list" id="saved-property-list"></div></section>
+        <section class="dashboard-section" id="enquiries" aria-labelledby="enquiries-title"><div class="dashboard-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Property conversations</p><h2 id="enquiries-title">Enquiries.</h2></div><span class="section-badge" id="enquiry-count">0</span></div><div class="dashboard-list" id="enquiry-list"></div></section>
+        <section class="dashboard-section" id="scheduled-visits" aria-labelledby="visits-title"><div class="dashboard-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Your calendar</p><h2 id="visits-title">Scheduled <em>visits.</em></h2></div><span class="section-badge" id="visit-count">0</span></div><div class="dashboard-list" id="visit-list"></div></section>
+        <section class="dashboard-section" id="roommate-requests" aria-labelledby="roommates-title"><div class="dashboard-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Shared living</p><h2 id="roommates-title">Roommate <em>requests.</em></h2></div><span class="section-badge" id="roommate-count">0</span></div><div class="dashboard-list" id="roommate-request-list"></div></section>
+        <section class="dashboard-section notifications-section" id="notifications" aria-labelledby="notifications-title"><div class="dashboard-section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Recent local activity</p><h2 id="notifications-title">Notifications.</h2></div><span class="section-badge" id="notification-count">0</span></div><div class="dashboard-list" id="notification-list" aria-live="polite"></div></section>
+        <p class="dashboard-footnote">Illustrative frontend demo only. There is no connected account, live inbox, email delivery, or booking service.</p>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><a href="../index.html">Find a place that feels like home.</a></div></footer>
+  </body>
+</html>

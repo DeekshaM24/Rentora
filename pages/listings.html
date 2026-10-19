@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171719">
+    <meta name="description" content="Explore considered rental homes, refine your search, and compare the details that matter with Rentora.">
+    <title>Explore Homes | Rentora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/listings.css">
+    <script src="../js/data.js" defer></script>
+    <script src="../js/listings.js" defer></script>
+  </head>
+  <body class="listings-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html" aria-label="Rentora home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+          <span class="brand-name">rentora<span>.</span></span>
+        </a>
+        <button class="menu-toggle icon-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="#listing-results" aria-current="page">Explore</a>
+          <a href="favorites.html">Favorites <span class="nav-count" id="favorite-count">0</span></a>
+          <a href="roommates.html">Roommates</a>
+          <a href="profile.html">Profile</a>
+          <a href="compare.html">Compare <span class="nav-count" id="compare-count">0</span></a>
+        </nav>
+        <div class="nav-actions"><a class="button button-small button-outline" href="../index.html">Back to Rentora <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="listing-intro">
+        <div class="container">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Find your next chapter</p>
+          <div class="listing-intro-row"><div><h1>Homes that feel <em>like yours.</em></h1><p>Thoughtful spaces, neighborhood by neighborhood.</p></div><a class="listing-back-link" href="../index.html">Back to the home page <span aria-hidden="true">↗</span></a></div>
+          <form class="discovery-search" id="discovery-search" role="search">
+            <label class="discovery-field discovery-location" for="search-location"><span class="field-label">Location</span><input id="search-location" name="location" type="search" placeholder="City or neighborhood" autocomplete="off"></label>
+            <label class="discovery-field" for="search-min-rent"><span class="field-label">Min. monthly rent</span><span class="input-prefix"><span>$</span><input id="search-min-rent" name="minRent" type="number" min="0" step="50" placeholder="Any"></span></label>
+            <label class="discovery-field" for="search-max-rent"><span class="field-label">Max. monthly rent</span><span class="input-prefix"><span>$</span><input id="search-max-rent" name="maxRent" type="number" min="0" step="50" placeholder="Any"></span></label>
+            <label class="discovery-field" for="search-bedrooms"><span class="field-label">Bedrooms</span><select id="search-bedrooms" name="bedrooms"><option value="">Any</option><option value="0">Studio</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></label>
+            <label class="discovery-field" for="search-type"><span class="field-label">Property type</span><select id="search-type" name="type"><option value="">Any type</option></select></label>
+            <button class="button button-primary discovery-submit" type="submit"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Search</span></button>
+          </form>
+        </div>
+      </section>
+
+      <section class="discovery-section" id="listing-results" aria-labelledby="results-title">
+        <div class="container">
+          <div class="results-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> A place to begin</p><h2 id="results-title">Explore <em>the collection.</em></h2></div><div class="results-tools"><span id="results-status" role="status" aria-live="polite"></span><button class="button button-outline filter-open" id="filter-open" type="button" aria-controls="discovery-filters" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M7 12h10m-7 5h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Filters <span id="active-filter-count">0</span></button><label class="sort-control" for="sort-listings"><span>Sort</span><select id="sort-listings" aria-label="Sort properties"><option value="newest">Newest</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option><option value="rating">Rating</option></select></label></div></div>
+          <div class="discovery-layout">
+            <button class="filter-backdrop" id="filter-backdrop" type="button" aria-label="Close filters" tabindex="-1"></button>
+            <aside class="filter-panel" id="discovery-filters" aria-label="Property filters">
+              <div class="filter-panel-heading"><h2>Refine your search</h2><button class="icon-button filter-close" id="filter-close" type="button" aria-label="Close filters">×</button></div>
+              <div class="filter-group"><label class="filter-label" for="filter-min-rent">Monthly rent</label><div class="filter-range"><label for="filter-min-rent"><span>Minimum</span><span class="input-prefix"><span>$</span><input id="filter-min-rent" type="number" min="0" step="50" placeholder="Any"></span></label><label for="filter-max-rent"><span>Maximum</span><span class="input-prefix"><span>$</span><input id="filter-max-rent" type="number" min="0" step="50" placeholder="Any"></span></label></div></div>
+              <div class="filter-group"><label class="filter-label" for="filter-bedrooms">Bedrooms</label><select id="filter-bedrooms"><option value="">Any</option><option value="0">Studio</option><option value="1">1 bedroom or more</option><option value="2">2 bedrooms or more</option><option value="3">3 bedrooms or more</option><option value="4">4 bedrooms or more</option></select></div>
+              <div class="filter-group"><label class="filter-label" for="filter-bathrooms">Bathrooms</label><select id="filter-bathrooms"><option value="">Any</option><option value="1">1 bathroom or more</option><option value="2">2 bathrooms or more</option><option value="3">3 bathrooms or more</option></select></div>
+              <div class="filter-group"><span class="filter-label">Furnishing</span><div class="check-list" id="furnishing-options"><label><input type="checkbox" value="Furnished"> Furnished</label><label><input type="checkbox" value="Partially furnished"> Partially furnished</label><label><input type="checkbox" value="Unfurnished"> Unfurnished</label></div></div>
+              <div class="filter-group"><label class="filter-label" for="filter-type">Property type</label><select id="filter-type"><option value="">Any type</option></select></div>
+              <div class="filter-group"><span class="filter-label">Amenities</span><div class="check-list" id="amenity-options"></div></div>
+              <button class="button button-quiet filter-reset" id="filter-reset" type="button">Clear all filters</button>
+            </aside>
+
+            <div class="listing-content">
+              <div class="property-grid listing-grid" id="listing-grid" aria-live="polite"></div>
+              <section class="recently-viewed" id="recently-viewed-section" aria-labelledby="recently-viewed-title" hidden><div class="subsection-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Pick up where you left off</p><h2 id="recently-viewed-title">Recently <em>viewed.</em></h2></div><button class="text-link clear-recent" id="clear-recent" type="button">Clear history</button></div><div class="property-grid recent-grid" id="recently-viewed-grid"></div></section>
+              <section class="saved-section" id="favorites-section" aria-labelledby="favorites-title"><div class="subsection-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Your shortlist</p><h2 id="favorites-title">Homes to <em>come back to.</em></h2></div><span class="section-count" id="favorites-section-count">0 saved</span></div><div class="property-grid saved-grid" id="favorites-grid"></div></section>
+              <section class="compare-section" id="compare-section" aria-labelledby="compare-title"><div class="subsection-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> Make a clearer choice</p><h2 id="compare-title">Side by <em>side.</em></h2></div><div class="compare-actions"><a class="button button-quiet" href="compare.html">Full comparison <span aria-hidden="true">↗</span></a><button class="button button-outline" id="compare-button" type="button" disabled>Compare selected <span aria-hidden="true">→</span></button></div></div><div class="compare-selected" id="compare-selected"></div></section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer listing-footer"><div class="container footer-main"><a class="brand footer-brand" href="../index.html" aria-label="Rentora home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 42 42" fill="none"><path d="M5 19.5 21 6l16 13.5V37H5V19.5Z" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M14.5 37V23.5h13V37M17 17.5h8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 9v8.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="brand-name">rentora<span>.</span></span></a><p class="footer-tagline">Find a place that feels like home.</p><div class="footer-links"><a href="../index.html">Home</a><a href="#listing-results">Explore homes</a><a href="#favorites-section">Favorites</a><a href="compare.html">Compare</a></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> Rentora</span><span>Made for the feeling of home.</span></div></footer>
+
+    <dialog class="notice-dialog comparison-dialog" id="comparison-dialog" aria-labelledby="comparison-title"><form method="dialog" class="dialog-close-form"><button class="icon-button dialog-close" aria-label="Close comparison"><span aria-hidden="true">×</span></button></form><p class="eyebrow">Your shortlist, side by side</p><h2 id="comparison-title">Details that <em>matter.</em></h2><p class="comparison-intro">A clearer view of the homes you are considering.</p><div class="comparison-table-wrap" id="comparison-table-wrap"></div></dialog>
+  </body>
+</html>
